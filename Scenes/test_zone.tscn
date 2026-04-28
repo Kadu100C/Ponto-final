@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://pfb8i37fysq4"]
+
+[ext_resource type="PackedScene" uid="uid://bmfso1h5mexx2" path="res://Scenes/player.tscn" id="1_8fg4o"]
+[ext_resource type="Texture2D" uid="uid://cvowbyhivqle3" path="res://Sprites/does-spamton-canonically-have-a-totally-different-head-v0-9ihjahk24cqc1.webp" id="2_0jvr3"]
+[ext_resource type="PackedScene" uid="uid://bu5muqnhetlpf" path="res://Scenes/enemy_(1).tscn" id="3_me5f7"]
+[ext_resource type="PackedScene" uid="uid://rba1rjm48d1k" path="res://Scenes/grafitti.tscn" id="4_7u08s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8fg4o"]
+size = Vector2(1072, 307)
+
+[node name="testZone" type="Node2D" unique_id=28531227]
+
+[node name="Player" parent="." unique_id=1538295308 instance=ExtResource("1_8fg4o")]
+position = Vector2(390, 465)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1927280969]
+zoom = Vector2(0.6, 0.6)
+position_smoothing_enabled = true
+
+[node name="ground" type="Sprite2D" parent="." unique_id=574231170]
+position = Vector2(6411.5, 1277)
+scale = Vector2(13.054629, 1)
+texture = ExtResource("2_0jvr3")
+
+[node name="Static" type="StaticBody2D" parent="ground" unique_id=1124204810]
+position = Vector2(2799.5, 1055)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground/Static" unique_id=956367247]
+position = Vector2(-2793.5, -1204)
+shape = SubResource("RectangleShape2D_8fg4o")
+debug_color = Color(2.0214916e-06, 0.60195875, 0.6905744, 0.41960785)
+
+[node name="enemy" parent="." unique_id=1915357397 instance=ExtResource("3_me5f7")]
+position = Vector2(2516, 867)
+
+[node name="Node" type="Node" parent="." unique_id=1802091259]
+
+[node name="grafitti" parent="Node" unique_id=1895484968 instance=ExtResource("4_7u08s")]
+position = Vector2(2847.5, 595.2917)
+
+[node name="grafitti2" parent="Node" unique_id=1158527682 instance=ExtResource("4_7u08s")]
+position = Vector2(2998.5, 595.2917)
+
+[node name="grafitti3" parent="Node" unique_id=1589493363 instance=ExtResource("4_7u08s")]
+position = Vector2(3144.5, 595.2917)
