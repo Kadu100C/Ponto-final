@@ -1,15 +1,23 @@
 [gd_scene format=3 uid="uid://bu5muqnhetlpf"]
 
 [ext_resource type="Texture2D" uid="uid://dpvvsmo5nurse" path="res://Sprites/enemy_(1).png" id="1_xqwiu"]
+[ext_resource type="Script" uid="uid://dtsrt3xhm0dlk" path="res://Scripts/enemy_(1).gd" id="2_moq65"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_moq65"]
 size = Vector2(172, 39)
 
 [node name="Sprite2D" type="Sprite2D" unique_id=1915357397]
 texture = ExtResource("1_xqwiu")
+script = ExtResource("2_moq65")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1389735878]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=2031105478]
 position = Vector2(1, -1.5)
 shape = SubResource("RectangleShape2D_moq65")
+
+[node name="RayCastLeft" type="RayCast2D" parent="." unique_id=1048016348]
+target_position = Vector2(-128, 0)
+
+[node name="RayCastRight" type="RayCast2D" parent="." unique_id=422600367]
+target_position = Vector2(110, 0)

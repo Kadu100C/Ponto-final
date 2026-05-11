@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://c054mrql62q8r"]
+
+[ext_resource type="Script" uid="uid://dv70nodq1un4e" path="res://Scripts/tela_inicial.gd" id="1_k6vlu"]
+[ext_resource type="Texture2D" uid="uid://b4yv2kyb78kb1" path="res://Sprites/71JDG2ML3ML._AC_UF350350_QL80_.png" id="1_st7ms"]
+[ext_resource type="FontFile" uid="uid://xeaom2th44qo" path="res://fonts/Ldfcomicsansbold-zgma.ttf" id="2_k6vlu"]
+[ext_resource type="FontFile" uid="uid://qh22qy8up1ke" path="res://fonts/Ldfcomicsans-jj7l.ttf" id="3_k8okf"]
+
+[node name="Control" type="Control" unique_id=1677170387]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k6vlu")
+
+[node name="caderno" type="Sprite2D" parent="." unique_id=858806092]
+position = Vector2(946, 543)
+scale = Vector2(3.13, 3.13)
+texture = ExtResource("1_st7ms")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1903453097]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.4627451)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=692022981]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -325.0
+offset_top = -11.0
+offset_right = 326.0
+offset_bottom = 418.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=632284075]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_k6vlu")
+theme_override_font_sizes/font_size = 130
+text = "Ponto Final"
+
+[node name="playButton" type="Button" parent="VBoxContainer" unique_id=210980801]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_k8okf")
+theme_override_font_sizes/font_size = 60
+text = "Jogar essa desgraça"
+flat = true
+
+[node name="creditsButton" type="Button" parent="VBoxContainer" unique_id=679170115]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_k8okf")
+theme_override_font_sizes/font_size = 60
+text = "Créditos"
+flat = true
+
+[node name="leaveButton" type="Button" parent="VBoxContainer" unique_id=1318077439]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_k8okf")
+theme_override_font_sizes/font_size = 60
+text = "Sair logo dessa droga"
+flat = true
+
+[connection signal="pressed" from="VBoxContainer/playButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/leaveButton" to="." method="_on_leave_button_pressed"]
