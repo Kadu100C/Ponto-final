@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 game_manager="*uid://ce6a7s5ujnp4o"
+grafitis="*uid://bgh06ijoardbc"
 
 [display]
 
@@ -28,6 +29,7 @@ window/size/viewport_height=1080
 
 Player=""
 playerAttack=""
+playerHitBox=""
 
 [physics]
 

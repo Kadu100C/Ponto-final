@@ -4,7 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://cvowbyhivqle3" path="res://Sprites/does-spamton-canonically-have-a-totally-different-head-v0-9ihjahk24cqc1.webp" id="2_0jvr3"]
 [ext_resource type="PackedScene" uid="uid://bu5muqnhetlpf" path="res://Scenes/enemy_(1).tscn" id="3_me5f7"]
 [ext_resource type="PackedScene" uid="uid://rba1rjm48d1k" path="res://Scenes/grafitti.tscn" id="4_7u08s"]
+[ext_resource type="Script" uid="uid://bc6y12daloi3t" path="res://Scripts/control.gd" id="5_1a2am"]
 [ext_resource type="PackedScene" uid="uid://cslelgfuxqjrq" path="res://Scenes/pauseScreen.tscn" id="5_k0gk3"]
+[ext_resource type="FontFile" uid="uid://xeaom2th44qo" path="res://fonts/Ldfcomicsansbold-zgma.ttf" id="6_7nrgn"]
+[ext_resource type="Texture2D" uid="uid://b5jxigabadgw4" path="res://Sprites/Spamton_battle_static.webp" id="6_mx783"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8fg4o"]
 size = Vector2(1072, 307)
@@ -48,9 +51,6 @@ position = Vector2(2998.5, 595.2917)
 [node name="grafitti3" parent="Node" unique_id=1589493363 instance=ExtResource("4_7u08s")]
 position = Vector2(3144.5, 595.2917)
 
-[node name="CanvasLayer" parent="." unique_id=179953603 instance=ExtResource("5_k0gk3")]
-visible = false
-
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1060389587]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1725638970]
@@ -75,3 +75,47 @@ shape = SubResource("RectangleShape2D_k0gk3")
 position = Vector2(2099, 898.99994)
 scale = Vector2(0.355, 0.355)
 texture = ExtResource("2_0jvr3")
+
+[node name="grafitimanager" type="CanvasLayer" parent="." unique_id=260166310]
+
+[node name="Control" type="Control" parent="grafitimanager" unique_id=1502213332]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("5_1a2am")
+
+[node name="MarginContainer" type="MarginContainer" parent="grafitimanager/Control" unique_id=1178135392]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="grafitimanager/Control/MarginContainer" unique_id=610320835]
+clip_contents = true
+custom_minimum_size = Vector2(81.2, 64.625)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/separation = 29
+
+[node name="TextureRect" type="TextureRect" parent="grafitimanager/Control/MarginContainer/HBoxContainer" unique_id=837661350]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+texture = ExtResource("6_mx783")
+expand_mode = 2
+
+[node name="grafitiCounter" type="Label" parent="grafitimanager/Control/MarginContainer/HBoxContainer" unique_id=1292196541]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_7nrgn")
+theme_override_font_sizes/font_size = 40
+text = "Grafitis - 00"
+
+[node name="pause" parent="." unique_id=179953603 instance=ExtResource("5_k0gk3")]
+visible = false

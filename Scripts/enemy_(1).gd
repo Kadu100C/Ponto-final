@@ -18,11 +18,13 @@ func _process(delta):
 	position.x += direction * SPEED * delta
 
 
-func _on_hit_box_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
+func _on_hit_box_area_entered(area: Area2D) -> void:
 	if area.is_in_group("playerAttack"):
 		queue_free()
-
-
-func _on_hit_box_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Player"):
-		get_tree().reload_current_scene()
+	if area.is_in_group("playerHitBox"):
+		if not grafitis.invencible:
+			if grafitis.grafitis > 0:
+				grafitis.grafitis = 0
+				grafitis.invencible = true
+			else:
+				get_tree().reload_current_scene()

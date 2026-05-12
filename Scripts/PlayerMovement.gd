@@ -2,6 +2,9 @@ extends CharacterBody2D
 
 @onready var ponto_attack: Area2D = $pontoAttack
 @onready var ponto_attack_2: CollisionShape2D = $pontoAttack/pontoAttack2
+@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
+@onready var player_hit_box_2: CollisionShape2D = $playerHitBox/playerHitBox2
+@onready var player_hit_box: Area2D = $playerHitBox
 
 # Variaveis
 var maxSpeed = 700
@@ -48,6 +51,13 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_down"):
 		canMove = false
 		ponto_attack_2.disabled = false
-		await (get_tree().create_timer(5).timeout)
+		await (get_tree().create_timer(3).timeout)
 		canMove = true
 		ponto_attack_2.disabled = true
+	
+	
+	if grafitis.invencible == true:
+		set_collision_mask_value(2, false)
+		await (get_tree().create_timer(2).timeout)
+		set_collision_mask_value(2, true)
+		grafitis.invencible = false

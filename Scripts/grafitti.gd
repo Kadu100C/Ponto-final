@@ -4,6 +4,7 @@ extends Sprite2D
 @onready var area_2d: Area2D = $Area2D
 @onready var hit_box: Area2D = $hitBox
 
+var valor = 1
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -16,4 +17,5 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
 	if body.is_in_group("Player"):
+		grafitis.grafitis += valor
 		queue_free()
