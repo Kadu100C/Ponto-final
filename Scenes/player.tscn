@@ -6,6 +6,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_v0iea"]
 radius = 83.294655
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_cvnsp"]
+radius = 126.09917
+
 [node name="Player" type="CharacterBody2D" unique_id=1538295308 groups=["Player"]]
 script = ExtResource("1_cvnsp")
 
@@ -14,3 +17,9 @@ texture = ExtResource("1_v0iea")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=445054737]
 shape = SubResource("CircleShape2D_v0iea")
+
+[node name="pontoAttack" type="Area2D" parent="." unique_id=1171389771 groups=["playerAttack"]]
+
+[node name="pontoAttack2" type="CollisionShape2D" parent="pontoAttack" unique_id=903758812 groups=["playerAttack"]]
+shape = SubResource("CircleShape2D_cvnsp")
+disabled = true

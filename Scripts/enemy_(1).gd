@@ -16,3 +16,13 @@ func _process(delta):
 	if ray_cast_left.is_colliding():
 		direction = 1
 	position.x += direction * SPEED * delta
+
+
+func _on_hit_box_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
+	if area.is_in_group("playerAttack"):
+		queue_free()
+
+
+func _on_hit_box_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		get_tree().reload_current_scene()

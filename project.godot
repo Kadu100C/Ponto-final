@@ -15,6 +15,10 @@ run/main_scene="uid://pfb8i37fysq4"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+game_manager="*uid://ce6a7s5ujnp4o"
+
 [display]
 
 window/size/viewport_width=1920
@@ -23,6 +27,7 @@ window/size/viewport_height=1080
 [global_group]
 
 Player=""
+playerAttack=""
 
 [physics]
 
