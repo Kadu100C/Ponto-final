@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cslelgfuxqjrq" path="res://Scenes/pauseScreen.tscn" id="5_k0gk3"]
 [ext_resource type="FontFile" uid="uid://xeaom2th44qo" path="res://fonts/Ldfcomicsansbold-zgma.ttf" id="6_7nrgn"]
 [ext_resource type="Texture2D" uid="uid://b5jxigabadgw4" path="res://Sprites/Spamton_battle_static.webp" id="6_mx783"]
+[ext_resource type="Texture2D" uid="uid://cyowkitnah676" path="res://Sprites/playerSpriteSheet.png" id="9_ykg0x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8fg4o"]
 size = Vector2(1072, 307)
@@ -19,10 +20,6 @@ size = Vector2(30.935257, 20)
 
 [node name="Player" parent="." unique_id=1538295308 instance=ExtResource("1_8fg4o")]
 position = Vector2(390, 465)
-
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1927280969]
-zoom = Vector2(0.6, 0.6)
-position_smoothing_enabled = true
 
 [node name="ground" type="Sprite2D" parent="." unique_id=574231170]
 position = Vector2(6411.5, 1277)
@@ -79,6 +76,7 @@ texture = ExtResource("2_0jvr3")
 [node name="grafitimanager" type="CanvasLayer" parent="." unique_id=260166310]
 
 [node name="Control" type="Control" parent="grafitimanager" unique_id=1502213332]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -94,6 +92,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 320.0
+offset_top = 80.0
+offset_right = 320.0
+offset_bottom = 80.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -119,3 +121,7 @@ text = "Grafitis - 00"
 
 [node name="pause" parent="." unique_id=179953603 instance=ExtResource("5_k0gk3")]
 visible = false
+
+[node name="Artboard1" type="Sprite2D" parent="." unique_id=679420855]
+position = Vector2(1750, 453)
+texture = ExtResource("9_ykg0x")
