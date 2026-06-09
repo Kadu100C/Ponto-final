@@ -1,35 +1,135 @@
 [gd_scene format=3 uid="uid://bmfso1h5mexx2"]
 
 [ext_resource type="Script" uid="uid://dmr56ifbpxlq4" path="res://Scripts/PlayerMovement.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://cpjc6qlc5bwcm" path="res://Sprites/player_pontofinal.png" id="1_v0iea"]
+[ext_resource type="Texture2D" uid="uid://cyowkitnah676" path="res://Sprites/playerSpriteSheet.png" id="2_cvnsp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6t5aa"]
+atlas = ExtResource("2_cvnsp")
+region = Rect2(288, 540, 288, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgqql"]
+atlas = ExtResource("2_cvnsp")
+region = Rect2(0, 0, 288, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkybt"]
+atlas = ExtResource("2_cvnsp")
+region = Rect2(288, 0, 288, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3wgy"]
+atlas = ExtResource("2_cvnsp")
+region = Rect2(576, 0, 288, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3smsa"]
+atlas = ExtResource("2_cvnsp")
+region = Rect2(864, 0, 288, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8erm5"]
+atlas = ExtResource("2_cvnsp")
+region = Rect2(1152, 0, 288, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1ek2"]
+atlas = ExtResource("2_cvnsp")
+region = Rect2(1440, 0, 288, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tx1dd"]
+atlas = ExtResource("2_cvnsp")
+region = Rect2(1728, 0, 288, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gymyn"]
+atlas = ExtResource("2_cvnsp")
+region = Rect2(0, 540, 288, 540)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pu2lt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6t5aa")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgqql")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkybt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3wgy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3smsa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8erm5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1ek2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tx1dd")
+}],
+"loop": true,
+"name": &"ponto_attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gymyn")
+}],
+"loop": true,
+"name": &"ponto_ssj",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v0iea"]
 radius = 83.294655
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cvnsp"]
-radius = 126.09917
+radius = 149.08386
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6t5aa"]
 radius = 98.731964
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
+size = Vector2(293, 440)
 
 [node name="Player" type="CharacterBody2D" unique_id=1538295308 groups=["Player"]]
 collision_layer = 3
 script = ExtResource("1_cvnsp")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=86494672]
-texture = ExtResource("1_v0iea")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=401154997]
+sprite_frames = SubResource("SpriteFrames_pu2lt")
+animation = &"ponto_ssj"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=445054737]
+position = Vector2(0, 55)
 shape = SubResource("CircleShape2D_v0iea")
 
 [node name="pontoAttack" type="Area2D" parent="." unique_id=1171389771 groups=["playerAttack"]]
+position = Vector2(0, 55)
 
 [node name="pontoAttack2" type="CollisionShape2D" parent="pontoAttack" unique_id=903758812 groups=["playerAttack"]]
+position = Vector2(-1, -43)
 shape = SubResource("CircleShape2D_cvnsp")
 disabled = true
 
 [node name="playerHitBox" type="Area2D" parent="." unique_id=362187403 groups=["playerHitBox"]]
+position = Vector2(0, 55)
 collision_layer = 3
 
 [node name="playerHitBox2" type="CollisionShape2D" parent="playerHitBox" unique_id=1830803588 groups=["playerHitBox"]]
 shape = SubResource("CircleShape2D_6t5aa")
+
+[node name="ssj_attack" type="Area2D" parent="." unique_id=1719377251 groups=["playerAttack"]]
+
+[node name="ssj_attack2" type="CollisionShape2D" parent="ssj_attack" unique_id=327919393]
+position = Vector2(-0.5, -41)
+shape = SubResource("RectangleShape2D_cvnsp")
+
+[node name="ssj_timer" type="Timer" parent="." unique_id=233351929]
+autostart = true
+
+[connection signal="timeout" from="ssj_timer" to="." method="_on_ssj_timer_timeout"]

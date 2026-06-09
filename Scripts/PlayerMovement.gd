@@ -5,6 +5,10 @@ extends CharacterBody2D
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var player_hit_box_2: CollisionShape2D = $playerHitBox/playerHitBox2
 @onready var player_hit_box: Area2D = $playerHitBox
+@onready var sprite_2d: AnimatedSprite2D = $Sprite2D
+@onready var ssj_attack: Area2D = $ssj_attack
+@onready var ssj_attack_2: CollisionShape2D = $ssj_attack/ssj_attack2
+@onready var ssj_timer: Timer = $ssj_timer
 
 # Variaveis
 var maxSpeed = 700
@@ -22,6 +26,7 @@ var gravity = 2000
 
 var canMove = true
 
+var ssj_active = false
 
 func _physics_process(delta):
 	
@@ -45,15 +50,20 @@ func _physics_process(delta):
 
 func _ready() -> void:
 	ponto_attack_2.disabled = true
+	ssj_attack_2.disabled = true
+	sprite_2d.play("Idle")
+	game_manager.ssj = false
 
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("ui_down"):
+	if Input.is_action_just_pressed("ui_down") && ssj_active == false:
 		canMove = false
 		ponto_attack_2.disabled = false
+		sprite_2d.play("ponto_attack")
 		await (get_tree().create_timer(3).timeout)
 		canMove = true
 		ponto_attack_2.disabled = true
+		sprite_2d.play("Idle")
 	
 	
 	if grafitis.invencible == true:
@@ -61,3 +71,22 @@ func _process(delta: float) -> void:
 		await (get_tree().create_timer(2).timeout)
 		set_collision_mask_value(2, true)
 		grafitis.invencible = false
+
+	if game_manager.SB <= 10:
+		game_manager.ssj = true
+
+	if grafitis.grafitis >= 10 && game_manager.ssj == true:
+		ssj_active = true
+		ssj_attack_2.disabled = false
+		sprite_2d.play("ponto_ssj")
+
+
+	if grafitis.grafitis == 0 && ssj_active == true:
+		sprite_2d.play("Idle")
+		ssj_attack_2.disabled = true
+		ssj_active = false
+
+
+func _on_ssj_timer_timeout() -> void:
+	if ssj_active == true:
+		grafitis.grafitis -= 1
