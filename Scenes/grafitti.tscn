@@ -1,19 +1,19 @@
 [gd_scene format=3 uid="uid://rba1rjm48d1k"]
 
-[ext_resource type="Texture2D" uid="uid://b5jxigabadgw4" path="res://Sprites/Spamton_battle_static.webp" id="1_t1q0v"]
+[ext_resource type="Texture2D" uid="uid://bm75pqevvny5p" path="res://Sprites/grafiti.png" id="1_maism"]
 [ext_resource type="Script" uid="uid://bi6bpvetlbija" path="res://Scripts/grafitti.gd" id="2_maism"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_maism"]
-radius = 200.95514
+radius = 73.68175
 
 [node name="grafitti" type="Sprite2D" unique_id=1895484968]
-scale = Vector2(0.25833333, 0.25833336)
-texture = ExtResource("1_t1q0v")
+texture = ExtResource("1_maism")
 script = ExtResource("2_maism")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=110152400]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=901768111]
+position = Vector2(2, 0)
 shape = SubResource("CircleShape2D_maism")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://rba1rjm48d1k" path="res://Scenes/grafitti.tscn" id="4_7u08s"]
 [ext_resource type="Script" uid="uid://bc6y12daloi3t" path="res://Scripts/control.gd" id="5_1a2am"]
 [ext_resource type="PackedScene" uid="uid://cslelgfuxqjrq" path="res://Scenes/pauseScreen.tscn" id="5_k0gk3"]
+[ext_resource type="Texture2D" uid="uid://bm75pqevvny5p" path="res://Sprites/grafiti.png" id="6_1a2am"]
 [ext_resource type="FontFile" uid="uid://xeaom2th44qo" path="res://fonts/Ldfcomicsansbold-zgma.ttf" id="6_7nrgn"]
-[ext_resource type="Texture2D" uid="uid://b5jxigabadgw4" path="res://Sprites/Spamton_battle_static.webp" id="6_mx783"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8fg4o"]
 size = Vector2(1072, 307)
@@ -141,8 +141,7 @@ theme_override_constants/separation = 29
 [node name="TextureRect" type="TextureRect" parent="grafitimanager/Control/MarginContainer/HBoxContainer" unique_id=837661350]
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
-texture = ExtResource("6_mx783")
-expand_mode = 2
+texture = ExtResource("6_1a2am")
 
 [node name="grafitiCounter" type="Label" parent="grafitimanager/Control/MarginContainer/HBoxContainer" unique_id=1292196541]
 layout_mode = 2

@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://rbobdu5if326"]
+
+[ext_resource type="Texture2D" uid="uid://ci7pocd40d8nn" path="res://Sprites/chão.png" id="1_107eo"]
+[ext_resource type="PackedScene" uid="uid://bmfso1h5mexx2" path="res://Scenes/player.tscn" id="2_43bfx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_atw0c"]
+size = Vector2(872.9, 18)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_107eo"]
+a = Vector2(22.583008, -37)
+b = Vector2(-40.738007, 85)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_107eo"]
+size = Vector2(92.02951, 18)
+
+[node name="Node2D" type="Node2D" unique_id=1825522085]
+
+[node name="chão" type="Node" parent="." unique_id=1518200465]
+
+[node name="Chão (1)" type="Sprite2D" parent="chão" unique_id=758667922]
+position = Vector2(5295, 1090)
+scale = Vector2(13.55, 1)
+texture = ExtResource("1_107eo")
+
+[node name="Area2D" type="StaticBody2D" parent="chão/Chão (1)" unique_id=1619615203]
+position = Vector2(0, -39)
+disable_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chão/Chão (1)/Area2D" unique_id=760369010]
+position = Vector2(2.7000122, 43)
+shape = SubResource("RectangleShape2D_atw0c")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="chão/Chão (1)/Area2D" unique_id=1102634235]
+position = Vector2(-454.76013, -1192)
+scale = Vector2(0.09, 154.05)
+shape = SubResource("RectangleShape2D_atw0c")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="chão/Chão (1)/Area2D" unique_id=961856501]
+position = Vector2(60.0738, -16)
+scale = Vector2(0.22, 7.415)
+shape = SubResource("RectangleShape2D_atw0c")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="chão/Chão (1)/Area2D" unique_id=539554420]
+position = Vector2(-58.30258, -46)
+shape = SubResource("SegmentShape2D_107eo")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="chão/Chão (1)/Area2D" unique_id=1239414479]
+position = Vector2(238.19177, -275)
+shape = SubResource("RectangleShape2D_107eo")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="chão/Chão (1)/Area2D" unique_id=1723033208]
+position = Vector2(319.63098, -425)
+scale = Vector2(0.325, 1)
+shape = SubResource("RectangleShape2D_107eo")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="chão/Chão (1)/Area2D" unique_id=1696075102]
+position = Vector2(361.845, -286)
+scale = Vector2(0.36724997, 1)
+shape = SubResource("RectangleShape2D_107eo")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="chão/Chão (1)/Area2D" unique_id=1666588808]
+position = Vector2(430.0369, -1066)
+scale = Vector2(0.03, 139.16)
+shape = SubResource("RectangleShape2D_atw0c")
+
+[node name="Chão (2)" type="Sprite2D" parent="chão" unique_id=1953262136]
+position = Vector2(2314, 528)
+scale = Vector2(0.945, 1)
+texture = ExtResource("1_107eo")
+
+[node name="Area2D" type="StaticBody2D" parent="chão/Chão (2)" unique_id=1299091477]
+disable_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chão/Chão (2)/Area2D" unique_id=1254793382]
+position = Vector2(1.0581584, 5)
+shape = SubResource("RectangleShape2D_atw0c")
+
+[node name="Chão (2)2" type="Sprite2D" parent="chão" unique_id=1641083685]
+position = Vector2(2962, 742)
+scale = Vector2(0.44, 1)
+texture = ExtResource("1_107eo")
+
+[node name="Area2D" type="StaticBody2D" parent="chão/Chão (2)2" unique_id=2059176188]
+disable_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chão/Chão (2)2/Area2D" unique_id=242484822]
+position = Vector2(1.0581584, 5)
+shape = SubResource("RectangleShape2D_atw0c")
+
+[node name="Chão" type="Sprite2D" parent="chão" unique_id=287433425]
+position = Vector2(4364.0005, 1032)
+rotation = -0.14137167
+texture = ExtResource("1_107eo")
+
+[node name="Chão2" type="Sprite2D" parent="chão" unique_id=1075180793]
+position = Vector2(6088, 973)
+scale = Vector2(3.155, 1)
+texture = ExtResource("1_107eo")
+
+[node name="Chão3" type="Sprite2D" parent="chão" unique_id=1093959320]
+position = Vector2(8519, 768)
+scale = Vector2(1.494, 1)
+texture = ExtResource("1_107eo")
+
+[node name="Chão4" type="Sprite2D" parent="chão" unique_id=73728551]
+position = Vector2(9623, 621)
+scale = Vector2(0.489, 1)
+texture = ExtResource("1_107eo")
+
+[node name="Chão5" type="Sprite2D" parent="chão" unique_id=873686913]
+position = Vector2(10196, 759)
+scale = Vector2(0.549, 1)
+texture = ExtResource("1_107eo")
+
+[node name="Player" parent="." unique_id=1538295308 instance=ExtResource("2_43bfx")]
+position = Vector2(330, 848)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1745514924]
+zoom = Vector2(0.7, 0.7)

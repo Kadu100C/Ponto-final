@@ -85,13 +85,13 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v0iea"]
-radius = 83.294655
+radius = 69.02898
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cvnsp"]
 radius = 149.08386
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6t5aa"]
-radius = 98.731964
+radius = 74.168724
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
 size = Vector2(293, 440)
@@ -102,7 +102,7 @@ script = ExtResource("1_cvnsp")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=401154997]
 sprite_frames = SubResource("SpriteFrames_pu2lt")
-animation = &"ponto_ssj"
+animation = &"Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=445054737]
 position = Vector2(0, 55)
