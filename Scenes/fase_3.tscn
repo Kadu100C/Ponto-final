@@ -1,13 +1,13 @@
-[gd_scene format=3 uid="uid://rbobdu5if326"]
+[gd_scene format=3 uid="uid://cy8n1xnen7it1"]
 
-[ext_resource type="PackedScene" uid="uid://bmfso1h5mexx2" path="res://Scenes/player.tscn" id="2_43bfx"]
-[ext_resource type="Texture2D" uid="uid://yv45n2br63mc" path="res://Sprites/tilemap.png" id="2_107eo"]
-[ext_resource type="PackedScene" uid="uid://rba1rjm48d1k" path="res://Scenes/grafitti.tscn" id="3_atw0c"]
-[ext_resource type="PackedScene" uid="uid://bu5muqnhetlpf" path="res://Scenes/enemy_(1).tscn" id="4_jatsu"]
-[ext_resource type="PackedScene" uid="uid://w72c5wxxls7l" path="res://Scenes/enemy_var_(1).tscn" id="5_jatsu"]
+[ext_resource type="PackedScene" uid="uid://bmfso1h5mexx2" path="res://Scenes/player.tscn" id="1_dm0oo"]
+[ext_resource type="Texture2D" uid="uid://yv45n2br63mc" path="res://Sprites/tilemap.png" id="2_w1jmt"]
+[ext_resource type="PackedScene" uid="uid://bu5muqnhetlpf" path="res://Scenes/enemy_(1).tscn" id="3_wyqio"]
+[ext_resource type="PackedScene" uid="uid://w72c5wxxls7l" path="res://Scenes/enemy_var_(1).tscn" id="4_43iu4"]
+[ext_resource type="PackedScene" uid="uid://rba1rjm48d1k" path="res://Scenes/grafitti.tscn" id="5_43iu4"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lg8go"]
-texture = ExtResource("2_107eo")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ubys0"]
+texture = ExtResource("2_w1jmt")
 texture_region_size = Vector2i(70, 70)
 37:6/0 = 0
 38:6/0 = 0
@@ -167,94 +167,89 @@ texture_region_size = Vector2i(70, 70)
 13:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(35, 2.313263, 30.072369, 1.3879547, 30.072372, -35, 24.520542, -35, 24.828983, 7.865078, 35, 7.5566444)
 15:2/0 = 0
 15:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-35, 8.173515, -35, 1.6963959, 35, 2.9301338, 35, 8.173515)
-3:3/0 = 0
-3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-35, -35, 35, -35, 35, 35, -35, 35)
 
-[sub_resource type="TileSet" id="TileSet_g4v7s"]
+[sub_resource type="TileSet" id="TileSet_43iu4"]
 tile_size = Vector2i(70, 70)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_lg8go")
+sources/0 = SubResource("TileSetAtlasSource_ubys0")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ubys0"]
 size = Vector2(75.38461, 891.9232)
 
-[node name="Node2D" type="Node2D" unique_id=1825522085]
+[node name="Fase_3" type="Node2D" unique_id=862989991]
 
-[node name="Player" parent="." unique_id=1538295308 instance=ExtResource("2_43bfx")]
+[node name="Player" parent="." unique_id=1538295308 instance=ExtResource("1_dm0oo")]
 position = Vector2(330, 848)
 
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1745514924]
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=508109589]
 zoom = Vector2(0.7, 0.7)
 
-[node name="TileMap" type="TileMap" parent="." unique_id=759183788]
+[node name="TileMap" type="TileMap" parent="." unique_id=771825918]
 scale = Vector2(2.6, 2.6)
-tile_set = SubResource("TileSet_g4v7s")
+tile_set = SubResource("TileSet_43iu4")
 format = 2
-layer_0/tile_data = PackedInt32Array(393214, 917504, 2, 393215, 917504, 2, 327680, 917504, 2, 327681, 917504, 2, 327682, 917504, 2, 327683, 917504, 2, 327684, 917504, 2, 327685, 917504, 2, 327686, 917504, 2, 327687, 917504, 2, 327688, 917504, 2, 327689, 917504, 2, 327690, 917504, 2, 327691, 917504, 2, 327692, 917504, 2, 327693, 917504, 2, 327694, 917504, 2, 327695, 917504, 2, 327696, 917504, 2, 327697, 917504, 2, 327698, 917504, 2, 327699, 917504, 2, 327700, 917504, 2, 327701, 917504, 2, 327702, 458752, 2, 262167, 524288, 1, 327703, 524288, 2, 262168, 917504, 2, 262169, 917504, 2, 262170, 917504, 2, 262171, 917504, 2, 262172, 917504, 2, 262173, 917504, 2, 262174, 917504, 2, 262175, 917504, 2, 262176, 917504, 2, 262177, 917504, 2, 262178, 917504, 2, 262179, 917504, 2, 262180, 917504, 2, 262181, 917504, 2, 262182, 917504, 2, 262183, 917504, 2, 262184, 917504, 2, 196651, 917504, 2, 196652, 917504, 2, 196653, 917504, 2, 196654, 917504, 2, 196655, 917504, 2, 196656, 917504, 2, 196657, 917504, 2, 131124, 917504, 2, 131125, 917504, 2, 196663, 917504, 2, 196664, 917504, 2, 327721, 917504, 2, 327722, 917504, 2, 327723, 917504, 2, 327724, 917504, 2, 327725, 917504, 2, 327726, 917504, 2, 327727, 917504, 2, 327728, 917504, 2, 327729, 917504, 2, 327730, 917504, 2, 327731, 917504, 2, 327732, 917504, 2, 327733, 917504, 2, 327734, 917504, 2, 327735, 917504, 2, 327736, 917504, 2, 327737, 917504, 2, 327738, 917504, 2, 327739, 917504, 2, 327740, 917504, 2, 327741, 917504, 2, 393213, 196608, 3, 196623, 917504, 2, 196624, 917504, 2, 131086, 917504, 2, 131085, 917504, 2, 131084, 917504, 2, 131083, 917504, 2, 131082, 917504, 2, 327720, 851968, 2, 393212, 196608, 3, 327676, 196608, 3, 262140, 196608, 3, 196604, 196608, 3, 131068, 196608, 3, 65532, 196608, 3, -4, 196608, 3, -65540, 196608, 3, -131076, 196608, 3, -196612, 196608, 3, -262148, 196608, 3, -327684, 196608, 3, 327677, 196608, 3, 262141, 196608, 3, 196605, 196608, 3, 131069, 196608, 3, 65533, 196608, 3, -3, 196608, 3, -65539, 196608, 3, -131075, 196608, 3, -196611, 196608, 3, -262147, 196608, 3, -327683, 196608, 3, -393154, 196608, 3, -327618, 196608, 3, -262082, 196608, 3, -196546, 196608, 3, -131010, 196608, 3, -65474, 196608, 3, 62, 196608, 3, 65598, 196608, 3, 131134, 196608, 3, 196670, 196608, 3, 262206, 196608, 3, 327742, 196608, 3)
+layer_0/tile_data = PackedInt32Array(393213, 917504, 2, 393214, 917504, 2, 393215, 917504, 2, 327680, 917504, 2, 327681, 917504, 2, 327682, 917504, 2, 327683, 917504, 2, 327684, 917504, 2, 327685, 917504, 2, 327686, 917504, 2, 327687, 917504, 2, 327688, 917504, 2, 327689, 458752, 2, 327690, 524288, 2, 262154, 524288, 1, 262155, 458752, 2, 196620, 524288, 1, 262156, 524288, 2, 196621, 458752, 2, 131086, 524288, 1, 196622, 524288, 2, 131087, 458752, 2, 65552, 524288, 1, 131088, 524288, 2, 65553, 589824, 1, 65554, 655360, 1, 131090, 655360, 2, 131091, 720896, 2, 131092, 786432, 2, 65556, 786432, 1, 65557, 851968, 1, 131093, 851968, 2, 131094, 458752, 2, 65559, 524288, 1, 131095, 524288, 2, 65560, 458752, 2, 25, 524288, 1, 65561, 524288, 2, 26, 589824, 1, 131100, 917504, 2, 131101, 917504, 2, 131102, 917504, 2, 262176, 917504, 2, 262177, 917504, 2, 262178, 917504, 2, 393252, 917504, 2, 393253, 917504, 2, 393254, 917504, 2, 393257, 458752, 2, 327722, 524288, 1, 393258, 524288, 2, 327723, 458752, 2, 262188, 524288, 1, 327724, 524288, 2, 262189, 458752, 2, 196654, 524288, 1, 262190, 524288, 2, 196655, 589824, 1, 262193, 917504, 2, 262194, 917504, 2, 262195, 917504, 2, 196661, 917504, 2, 196662, 917504, 2, 196663, 917504, 2, 131128, 917504, 2, 131129, 917504, 2, 131130, 917504, 2, 65595, 917504, 2, 65596, 917504, 2, 65597, 917504, 2, -65507, 917504, 2, -131041, 917504, 2, -196576, 917504, 2, -262110, 917504, 2, -262109, 917504, 2, -262108, 917504, 2, -262107, 917504, 2, -262106, 917504, 2, -262105, 917504, 2, -262104, 917504, 2, -262103, 917504, 2)
 
-[node name="Area2D" type="RigidBody2D" parent="TileMap" unique_id=125201163]
-disable_mode = 1
-mass = 0.001
-gravity_scale = 0.0
+[node name="Area2D" type="Area2D" parent="TileMap" unique_id=1609878993]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Area2D" unique_id=1952053312]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Area2D" unique_id=1563972020]
 position = Vector2(-187.30772, -10.192264)
-shape = SubResource("RectangleShape2D_g4v7s")
+shape = SubResource("RectangleShape2D_ubys0")
 
-[node name="Area2D2" type="Area2D" parent="TileMap" unique_id=1184588846]
+[node name="Area2D2" type="Area2D" parent="TileMap" unique_id=55249841]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Area2D2" unique_id=689415783]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Area2D2" unique_id=1880480611]
 position = Vector2(4360.7695, 20.384611)
-shape = SubResource("RectangleShape2D_g4v7s")
+shape = SubResource("RectangleShape2D_ubys0")
 
-[node name="coins" type="Node" parent="." unique_id=1540128926]
+[node name="palavras adultas" type="Node" parent="." unique_id=1912788956]
 
-[node name="grafitti" parent="coins" unique_id=1895484968 instance=ExtResource("3_atw0c")]
-position = Vector2(2039, 206)
+[node name="Sprite2D" parent="palavras adultas" unique_id=1676324041 instance=ExtResource("3_wyqio")]
+position = Vector2(4332, 160)
 
-[node name="grafitti2" parent="coins" unique_id=683794783 instance=ExtResource("3_atw0c")]
-position = Vector2(2245, 206)
+[node name="Sprite2D2" parent="palavras adultas" unique_id=1056330228 instance=ExtResource("3_wyqio")]
+position = Vector2(6081, 725)
 
-[node name="grafitti3" parent="coins" unique_id=787653978 instance=ExtResource("3_atw0c")]
-position = Vector2(2471, 211)
+[node name="enemy_var_(1)" parent="palavras adultas" unique_id=610853441 instance=ExtResource("4_43iu4")]
+position = Vector2(10993, 178)
 
-[node name="grafitti4" parent="coins" unique_id=370463391 instance=ExtResource("3_atw0c")]
-position = Vector2(4561, 392)
+[node name="enemy_var_(1)2" parent="palavras adultas" unique_id=347387428 instance=ExtResource("4_43iu4")]
+position = Vector2(8146, 726)
 
-[node name="grafitti5" parent="coins" unique_id=259413988 instance=ExtResource("3_atw0c")]
-position = Vector2(4733, 384)
+[node name="enemy_var_(1)3" parent="palavras adultas" unique_id=2087206469 instance=ExtResource("4_43iu4")]
+position = Vector2(3602, 345)
 
-[node name="grafitti6" parent="coins" unique_id=2122733172 instance=ExtResource("3_atw0c")]
-position = Vector2(4914, 382)
+[node name="coins" type="Node" parent="." unique_id=2032270373]
 
-[node name="grafitti7" parent="coins" unique_id=1599015940 instance=ExtResource("3_atw0c")]
-position = Vector2(8958, 458)
+[node name="grafitti" parent="coins" unique_id=1895484968 instance=ExtResource("5_43iu4")]
+position = Vector2(2933, 108)
 
-[node name="grafitti8" parent="coins" unique_id=228800994 instance=ExtResource("3_atw0c")]
-position = Vector2(8962, 294)
+[node name="grafitti2" parent="coins" unique_id=1548575469 instance=ExtResource("5_43iu4")]
+position = Vector2(3139, 108)
 
-[node name="grafitti9" parent="coins" unique_id=571498398 instance=ExtResource("3_atw0c")]
-position = Vector2(9322, 898)
+[node name="grafitti3" parent="coins" unique_id=204712851 instance=ExtResource("5_43iu4")]
+position = Vector2(3365, 113)
 
-[node name="grafitti10" parent="coins" unique_id=838370080 instance=ExtResource("3_atw0c")]
-position = Vector2(9506, 894)
+[node name="grafitti4" parent="coins" unique_id=1149960396 instance=ExtResource("5_43iu4")]
+position = Vector2(5175, 290)
 
-[node name="grafitti11" parent="coins" unique_id=1548287198 instance=ExtResource("3_atw0c")]
-position = Vector2(9686, 890)
+[node name="grafitti5" parent="coins" unique_id=413656749 instance=ExtResource("5_43iu4")]
+position = Vector2(5347, 282)
 
-[node name="palavras adultas" type="Node" parent="." unique_id=1491303074]
+[node name="grafitti6" parent="coins" unique_id=1018717869 instance=ExtResource("5_43iu4")]
+position = Vector2(5528, 280)
 
-[node name="Sprite2D" parent="palavras adultas" unique_id=1915357397 instance=ExtResource("4_jatsu")]
-position = Vector2(3563, 970)
+[node name="grafitti7" parent="coins" unique_id=831228396 instance=ExtResource("5_43iu4")]
+position = Vector2(8584, 458)
 
-[node name="Sprite2D2" parent="palavras adultas" unique_id=1305242182 instance=ExtResource("4_jatsu")]
-position = Vector2(5752, 778)
+[node name="grafitti8" parent="coins" unique_id=1154586309 instance=ExtResource("5_43iu4")]
+position = Vector2(8588, 294)
 
-[node name="enemy_var_(1)" parent="palavras adultas" unique_id=560411306 instance=ExtResource("5_jatsu")]
-position = Vector2(7915, 943)
+[node name="grafitti9" parent="coins" unique_id=502175604 instance=ExtResource("5_43iu4")]
+position = Vector2(10261, 249)
 
-[node name="enemy_var_(1)2" parent="palavras adultas" unique_id=1091245092 instance=ExtResource("5_jatsu")]
-position = Vector2(10081, 940)
+[node name="grafitti10" parent="coins" unique_id=1348438149 instance=ExtResource("5_43iu4")]
+position = Vector2(10445, 245)
 
-[node name="enemy_var_(1)3" parent="palavras adultas" unique_id=2097296396 instance=ExtResource("5_jatsu")]
-position = Vector2(2450, 389)
+[node name="grafitti11" parent="coins" unique_id=804226361 instance=ExtResource("5_43iu4")]
+position = Vector2(10625, 241)

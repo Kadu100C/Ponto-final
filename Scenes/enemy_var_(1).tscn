@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://w72c5wxxls7l"]
+
+[ext_resource type="Texture2D" uid="uid://b5xffv43uchq8" path="res://Sprites/palavrasAdultas.png" id="1_rj3it"]
+[ext_resource type="Script" uid="uid://bdswgunb11igi" path="res://Scripts/enemy_hit_box.gd" id="2_08fwe"]
+[ext_resource type="Script" uid="uid://dgyv6bk12c2ux" path="res://Scripts/enemy_var_(1).gd" id="2_u6mx1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08fwe"]
+atlas = ExtResource("1_rj3it")
+region = Rect2(305, 0, 305, 230)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yf5fn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08fwe")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pje8o"]
+size = Vector2(215, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(193, 29)
+
+[node name="enemy_var_(1)" type="CharacterBody2D" unique_id=610853441]
+script = ExtResource("2_u6mx1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=190439522]
+sprite_frames = SubResource("SpriteFrames_yf5fn")
+
+[node name="RayCastLeft" type="RayCast2D" parent="." unique_id=2044327064]
+target_position = Vector2(-86, 0)
+
+[node name="RayCastRight" type="RayCast2D" parent="." unique_id=9919814]
+target_position = Vector2(117, 1)
+
+[node name="hitBox" type="Area2D" parent="." unique_id=231807744]
+collision_layer = 3
+script = ExtResource("2_08fwe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitBox" unique_id=1853259892]
+position = Vector2(17.5, -4)
+shape = SubResource("RectangleShape2D_pje8o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2117912816]
+position = Vector2(13.5, 4.5)
+shape = SubResource("RectangleShape2D_yf5fn")
+
+[connection signal="area_entered" from="hitBox" to="." method="_on_hit_box_area_entered"]

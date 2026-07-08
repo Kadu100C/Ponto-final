@@ -1,29 +1,54 @@
 [gd_scene format=3 uid="uid://bu5muqnhetlpf"]
 
-[ext_resource type="Texture2D" uid="uid://dpvvsmo5nurse" path="res://Sprites/enemy_(1).png" id="1_xqwiu"]
+[ext_resource type="Texture2D" uid="uid://b5xffv43uchq8" path="res://Sprites/palavrasAdultas.png" id="1_o8uae"]
 [ext_resource type="Script" uid="uid://dtsrt3xhm0dlk" path="res://Scripts/enemy_(1).gd" id="2_moq65"]
 [ext_resource type="Script" uid="uid://bdswgunb11igi" path="res://Scripts/enemy_hit_box.gd" id="3_o8uae"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o8uae"]
-size = Vector2(185, 48)
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8uae"]
+atlas = ExtResource("1_o8uae")
+region = Rect2(0, 0, 305, 230)
 
-[node name="Sprite2D" type="Sprite2D" unique_id=1915357397]
+[sub_resource type="SpriteFrames" id="SpriteFrames_yf5fn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o8uae")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o8uae"]
+size = Vector2(215, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(212, 27)
+
+[node name="Sprite2D" type="CharacterBody2D" unique_id=1676324041]
 z_index = 2
-texture = ExtResource("1_xqwiu")
 script = ExtResource("2_moq65")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1485897449]
+sprite_frames = SubResource("SpriteFrames_yf5fn")
+
 [node name="RayCastLeft" type="RayCast2D" parent="." unique_id=1048016348]
-target_position = Vector2(-128, 0)
+target_position = Vector2(-91, 0)
 
 [node name="RayCastRight" type="RayCast2D" parent="." unique_id=422600367]
-target_position = Vector2(110, 0)
+target_position = Vector2(127, 2)
 
 [node name="hitBox" type="Area2D" parent="." unique_id=571017765]
 collision_layer = 3
+gravity_space_override = 1
 script = ExtResource("3_o8uae")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitBox" unique_id=1709606764]
-position = Vector2(2.5, -4)
+position = Vector2(17.5, -4)
 shape = SubResource("RectangleShape2D_o8uae")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1369717103]
+position = Vector2(17, 3.5)
+shape = SubResource("RectangleShape2D_g4v7s")
 
 [connection signal="area_entered" from="hitBox" to="." method="_on_hit_box_area_entered"]
