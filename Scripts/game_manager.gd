@@ -2,6 +2,6 @@ extends Node
 
 
 
-var SB = 10
+var SB = 0
 
 var ssj = false

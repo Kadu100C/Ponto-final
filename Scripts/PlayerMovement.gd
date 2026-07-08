@@ -72,7 +72,7 @@ func _process(delta: float) -> void:
 		set_collision_mask_value(2, true)
 		grafitis.invencible = false
 
-	if game_manager.SB <= 10:
+	if game_manager.SB >= 5:
 		game_manager.ssj = true
 
 	if grafitis.grafitis >= 10 && game_manager.ssj == true:

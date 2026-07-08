@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dq8qgty8235g0"]
+
+[ext_resource type="Texture2D" uid="uid://c7ekrvfyf2req" path="res://Sprites/pngtree-cartoon-glue-png-image_6537497.png" id="1_ra5jr"]
+[ext_resource type="Script" uid="uid://beoiwtmmiow1b" path="res://Scripts/subs_1.gd" id="2_snobc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 232.71997
+
+[node name="subs_1" type="Sprite2D" unique_id=948672751]
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("1_ra5jr")
+script = ExtResource("2_snobc")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1335673478]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1628191611]
+shape = SubResource("CircleShape2D_g4v7s")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

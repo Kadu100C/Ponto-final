@@ -3,8 +3,14 @@
 [ext_resource type="PackedScene" uid="uid://bmfso1h5mexx2" path="res://Scenes/player.tscn" id="1_w016j"]
 [ext_resource type="Texture2D" uid="uid://yv45n2br63mc" path="res://Sprites/tilemap.png" id="2_eoqrh"]
 [ext_resource type="PackedScene" uid="uid://rba1rjm48d1k" path="res://Scenes/grafitti.tscn" id="3_eoqrh"]
+[ext_resource type="Script" uid="uid://brkowk64parnq" path="res://Scripts/next_area2.gd" id="3_le40s"]
 [ext_resource type="PackedScene" uid="uid://bu5muqnhetlpf" path="res://Scenes/enemy_(1).tscn" id="4_cs05n"]
 [ext_resource type="PackedScene" uid="uid://w72c5wxxls7l" path="res://Scenes/enemy_var_(1).tscn" id="5_dh80i"]
+[ext_resource type="PackedScene" uid="uid://dcbdfm7pqnnqr" path="res://Scenes/subs_2.tscn" id="6_dh80i"]
+[ext_resource type="Script" uid="uid://dcuggtciae1n0" path="res://Scripts/deathzone.gd" id="8_au6ud"]
+[ext_resource type="Script" uid="uid://bc6y12daloi3t" path="res://Scripts/control.gd" id="9_vjvqt"]
+[ext_resource type="Texture2D" uid="uid://bm75pqevvny5p" path="res://Sprites/grafiti.png" id="10_lhuwr"]
+[ext_resource type="FontFile" uid="uid://xeaom2th44qo" path="res://fonts/Ldfcomicsansbold-zgma.ttf" id="11_g765r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p0386"]
 texture = ExtResource("2_eoqrh")
@@ -167,6 +173,8 @@ texture_region_size = Vector2i(70, 70)
 13:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(35, 2.313263, 30.072369, 1.3879547, 30.072372, -35, 24.520542, -35, 24.828983, 7.865078, 35, 7.5566444)
 15:2/0 = 0
 15:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-35, 8.173515, -35, 1.6963959, 35, 2.9301338, 35, 8.173515)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-35, -35, 35, -35, 35, 35, -35, 35)
 
 [sub_resource type="TileSet" id="TileSet_cs05n"]
 tile_size = Vector2i(70, 70)
@@ -175,6 +183,9 @@ sources/0 = SubResource("TileSetAtlasSource_p0386")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dh80i"]
 size = Vector2(75.38461, 891.9232)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b0mac"]
+size = Vector2(15023, 690.5)
 
 [node name="Fase_2" type="Node2D" unique_id=1396046397]
 
@@ -188,15 +199,10 @@ zoom = Vector2(0.7, 0.7)
 scale = Vector2(2.6, 2.6)
 tile_set = SubResource("TileSet_cs05n")
 format = 2
-layer_0/tile_data = PackedInt32Array(393213, 917504, 2, 393214, 917504, 2, 393215, 917504, 2, 327680, 917504, 2, 327681, 917504, 2, 327682, 917504, 2, 327683, 917504, 2, 327684, 917504, 2, 327685, 917504, 2, 327686, 917504, 2, 327687, 917504, 2, 327688, 917504, 2, 327689, 917504, 2, 262155, 917504, 2, 262156, 917504, 2, 262157, 917504, 2, 262158, 917504, 2, 196625, 917504, 2, 196626, 917504, 2, 196627, 917504, 2, 196628, 917504, 2, 327701, 917504, 2, 327702, 917504, 2, 393240, 917504, 2, 393241, 917504, 2, 327707, 917504, 2, 327706, 917504, 2, 262172, 917504, 2, 262173, 917504, 2, 262174, 917504, 2, 262175, 917504, 2, 262176, 917504, 2, 262177, 917504, 2, 262178, 917504, 2, 262179, 917504, 2, 196644, 917504, 2, 196645, 917504, 2, 196646, 917504, 2, 131111, 917504, 2, 131112, 917504, 2, 131113, 917504, 2, 65578, 917504, 2, 65579, 917504, 2, 65580, 917504, 2, 262189, 917504, 2, 262190, 917504, 2, 262191, 917504, 2, 262192, 917504, 2, 262193, 917504, 2, 262194, 917504, 2, 262195, 917504, 2, 262196, 917504, 2, 262197, 917504, 2, 262198, 917504, 2, 262199, 917504, 2, 196667, 917504, 2, 196668, 917504, 2, 196669, 917504, 2, 196670, 917504, 2, 262200, 458752, 2, 196633, 917504, 2, 196632, 917504, 2)
-
-[node name="Area2D" type="Area2D" parent="TileMap" unique_id=138837992]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Area2D" unique_id=571862911]
-position = Vector2(-187.30772, -10.192264)
-shape = SubResource("RectangleShape2D_dh80i")
+layer_0/tile_data = PackedInt32Array(393213, 196608, 3, 393214, 917504, 2, 393215, 917504, 2, 327680, 917504, 2, 327681, 917504, 2, 327682, 917504, 2, 327683, 917504, 2, 327684, 917504, 2, 327685, 917504, 2, 327686, 917504, 2, 327687, 917504, 2, 327688, 917504, 2, 327689, 917504, 2, 262155, 917504, 2, 262156, 917504, 2, 262157, 917504, 2, 262158, 917504, 2, 196625, 917504, 2, 196626, 917504, 2, 196627, 917504, 2, 196628, 917504, 2, 327701, 917504, 2, 327702, 917504, 2, 393240, 917504, 2, 393241, 917504, 2, 327707, 917504, 2, 327706, 917504, 2, 262172, 917504, 2, 262173, 917504, 2, 262174, 917504, 2, 262175, 917504, 2, 262176, 917504, 2, 262177, 917504, 2, 262178, 917504, 2, 262179, 917504, 2, 196644, 917504, 2, 196645, 917504, 2, 196646, 917504, 2, 131111, 917504, 2, 131112, 917504, 2, 131113, 917504, 2, 65578, 917504, 2, 65579, 917504, 2, 65580, 917504, 2, 262189, 917504, 2, 262190, 917504, 2, 262191, 917504, 2, 262192, 917504, 2, 262193, 917504, 2, 262194, 917504, 2, 262195, 917504, 2, 262196, 917504, 2, 262197, 917504, 2, 262198, 917504, 2, 262199, 917504, 2, 196667, 917504, 2, 196668, 917504, 2, 196669, 917504, 2, 196670, 196608, 3, 262200, 458752, 2, 196633, 917504, 2, 196632, 917504, 2, -327683, 196608, 3, -262147, 196608, 3, -196611, 196608, 3, -131075, 196608, 3, -65539, 196608, 3, -3, 196608, 3, 65533, 196608, 3, 131069, 196608, 3, 196605, 196608, 3, 262141, 196608, 3, 327677, 196608, 3, -589762, 196608, 3, -524226, 196608, 3, -458690, 196608, 3, -393154, 196608, 3, -327618, 196608, 3, -262082, 196608, 3, -196546, 196608, 3, -131010, 196608, 3, -65474, 196608, 3, 62, 196608, 3, 65598, 196608, 3, 131134, 196608, 3)
 
 [node name="Area2D2" type="Area2D" parent="TileMap" unique_id=522398595]
+script = ExtResource("3_le40s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Area2D2" unique_id=1843952772]
 position = Vector2(4360.7695, 20.384611)
@@ -253,3 +259,61 @@ position = Vector2(8714, 758)
 
 [node name="enemy_var_(1)3" parent="palavras adultas" unique_id=1626720407 instance=ExtResource("5_dh80i")]
 position = Vector2(1011, 957)
+
+[node name="subs_2" parent="palavras adultas" unique_id=1718264898 instance=ExtResource("6_dh80i")]
+position = Vector2(4545, 490)
+scale = Vector2(0.34444445, 0.35833332)
+
+[node name="deathzone" type="Area2D" parent="." unique_id=464479877]
+script = ExtResource("8_au6ud")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="deathzone" unique_id=1687036861]
+position = Vector2(5392, 1755)
+shape = SubResource("RectangleShape2D_b0mac")
+
+[node name="grafitimanager" type="CanvasLayer" parent="." unique_id=965240995]
+
+[node name="Control" type="Control" parent="grafitimanager" unique_id=1599999181]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("9_vjvqt")
+
+[node name="MarginContainer" type="MarginContainer" parent="grafitimanager/Control" unique_id=1562582566]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 66.0
+offset_top = 58.0
+offset_right = 66.0
+offset_bottom = 58.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="grafitimanager/Control/MarginContainer" unique_id=269000882]
+custom_minimum_size = Vector2(81.2, 64.625)
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/separation = 29
+
+[node name="TextureRect" type="TextureRect" parent="grafitimanager/Control/MarginContainer/HBoxContainer" unique_id=1288824976]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+texture = ExtResource("10_lhuwr")
+
+[node name="grafitiCounter" type="Label" parent="grafitimanager/Control/MarginContainer/HBoxContainer" unique_id=465573235]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("11_g765r")
+theme_override_font_sizes/font_size = 40
+text = "Grafitis - 00"
+
+[connection signal="body_entered" from="TileMap/Area2D2" to="TileMap/Area2D2" method="_on_body_entered"]
+[connection signal="body_entered" from="deathzone" to="deathzone" method="_on_body_entered"]

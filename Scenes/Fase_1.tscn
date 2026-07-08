@@ -2,9 +2,15 @@
 
 [ext_resource type="PackedScene" uid="uid://bmfso1h5mexx2" path="res://Scenes/player.tscn" id="2_43bfx"]
 [ext_resource type="Texture2D" uid="uid://yv45n2br63mc" path="res://Sprites/tilemap.png" id="2_107eo"]
+[ext_resource type="Script" uid="uid://b80ni7m2w0tlw" path="res://Scripts/next_area1.gd" id="3_1p2nq"]
 [ext_resource type="PackedScene" uid="uid://rba1rjm48d1k" path="res://Scenes/grafitti.tscn" id="3_atw0c"]
 [ext_resource type="PackedScene" uid="uid://bu5muqnhetlpf" path="res://Scenes/enemy_(1).tscn" id="4_jatsu"]
 [ext_resource type="PackedScene" uid="uid://w72c5wxxls7l" path="res://Scenes/enemy_var_(1).tscn" id="5_jatsu"]
+[ext_resource type="PackedScene" uid="uid://dq8qgty8235g0" path="res://Scenes/subs_1.tscn" id="6_lg8go"]
+[ext_resource type="Script" uid="uid://dcuggtciae1n0" path="res://Scripts/deathzone.gd" id="8_dh7e6"]
+[ext_resource type="Script" uid="uid://bc6y12daloi3t" path="res://Scripts/control.gd" id="9_pqsd4"]
+[ext_resource type="Texture2D" uid="uid://bm75pqevvny5p" path="res://Sprites/grafiti.png" id="10_4jw6c"]
+[ext_resource type="FontFile" uid="uid://xeaom2th44qo" path="res://fonts/Ldfcomicsansbold-zgma.ttf" id="11_4tmv2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lg8go"]
 texture = ExtResource("2_107eo")
@@ -178,6 +184,9 @@ sources/0 = SubResource("TileSetAtlasSource_lg8go")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(75.38461, 891.9232)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(15023, 690.5)
+
 [node name="Node2D" type="Node2D" unique_id=1825522085]
 
 [node name="Player" parent="." unique_id=1538295308 instance=ExtResource("2_43bfx")]
@@ -192,16 +201,8 @@ tile_set = SubResource("TileSet_g4v7s")
 format = 2
 layer_0/tile_data = PackedInt32Array(393214, 917504, 2, 393215, 917504, 2, 327680, 917504, 2, 327681, 917504, 2, 327682, 917504, 2, 327683, 917504, 2, 327684, 917504, 2, 327685, 917504, 2, 327686, 917504, 2, 327687, 917504, 2, 327688, 917504, 2, 327689, 917504, 2, 327690, 917504, 2, 327691, 917504, 2, 327692, 917504, 2, 327693, 917504, 2, 327694, 917504, 2, 327695, 917504, 2, 327696, 917504, 2, 327697, 917504, 2, 327698, 917504, 2, 327699, 917504, 2, 327700, 917504, 2, 327701, 917504, 2, 327702, 458752, 2, 262167, 524288, 1, 327703, 524288, 2, 262168, 917504, 2, 262169, 917504, 2, 262170, 917504, 2, 262171, 917504, 2, 262172, 917504, 2, 262173, 917504, 2, 262174, 917504, 2, 262175, 917504, 2, 262176, 917504, 2, 262177, 917504, 2, 262178, 917504, 2, 262179, 917504, 2, 262180, 917504, 2, 262181, 917504, 2, 262182, 917504, 2, 262183, 917504, 2, 262184, 917504, 2, 196651, 917504, 2, 196652, 917504, 2, 196653, 917504, 2, 196654, 917504, 2, 196655, 917504, 2, 196656, 917504, 2, 196657, 917504, 2, 131124, 917504, 2, 131125, 917504, 2, 196663, 917504, 2, 196664, 917504, 2, 327721, 917504, 2, 327722, 917504, 2, 327723, 917504, 2, 327724, 917504, 2, 327725, 917504, 2, 327726, 917504, 2, 327727, 917504, 2, 327728, 917504, 2, 327729, 917504, 2, 327730, 917504, 2, 327731, 917504, 2, 327732, 917504, 2, 327733, 917504, 2, 327734, 917504, 2, 327735, 917504, 2, 327736, 917504, 2, 327737, 917504, 2, 327738, 917504, 2, 327739, 917504, 2, 327740, 917504, 2, 327741, 917504, 2, 393213, 196608, 3, 196623, 917504, 2, 196624, 917504, 2, 131086, 917504, 2, 131085, 917504, 2, 131084, 917504, 2, 131083, 917504, 2, 131082, 917504, 2, 327720, 851968, 2, 393212, 196608, 3, 327676, 196608, 3, 262140, 196608, 3, 196604, 196608, 3, 131068, 196608, 3, 65532, 196608, 3, -4, 196608, 3, -65540, 196608, 3, -131076, 196608, 3, -196612, 196608, 3, -262148, 196608, 3, -327684, 196608, 3, 327677, 196608, 3, 262141, 196608, 3, 196605, 196608, 3, 131069, 196608, 3, 65533, 196608, 3, -3, 196608, 3, -65539, 196608, 3, -131075, 196608, 3, -196611, 196608, 3, -262147, 196608, 3, -327683, 196608, 3, -393154, 196608, 3, -327618, 196608, 3, -262082, 196608, 3, -196546, 196608, 3, -131010, 196608, 3, -65474, 196608, 3, 62, 196608, 3, 65598, 196608, 3, 131134, 196608, 3, 196670, 196608, 3, 262206, 196608, 3, 327742, 196608, 3)
 
-[node name="Area2D" type="RigidBody2D" parent="TileMap" unique_id=125201163]
-disable_mode = 1
-mass = 0.001
-gravity_scale = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Area2D" unique_id=1952053312]
-position = Vector2(-187.30772, -10.192264)
-shape = SubResource("RectangleShape2D_g4v7s")
-
 [node name="Area2D2" type="Area2D" parent="TileMap" unique_id=1184588846]
+script = ExtResource("3_1p2nq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Area2D2" unique_id=689415783]
 position = Vector2(4360.7695, 20.384611)
@@ -258,3 +259,61 @@ position = Vector2(10081, 940)
 
 [node name="enemy_var_(1)3" parent="palavras adultas" unique_id=2097296396 instance=ExtResource("5_jatsu")]
 position = Vector2(2450, 389)
+
+[node name="subs_1" parent="." unique_id=948672751 instance=ExtResource("6_lg8go")]
+position = Vector2(9641, 225)
+scale = Vector2(0.25833285, 0.27777782)
+
+[node name="deathzone" type="Area2D" parent="." unique_id=543927965]
+script = ExtResource("8_dh7e6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="deathzone" unique_id=1630772541]
+position = Vector2(5494.5, 1581.75)
+shape = SubResource("RectangleShape2D_yf5fn")
+
+[node name="grafitimanager" type="CanvasLayer" parent="." unique_id=2069078963]
+
+[node name="Control" type="Control" parent="grafitimanager" unique_id=1151854279]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("9_pqsd4")
+
+[node name="MarginContainer" type="MarginContainer" parent="grafitimanager/Control" unique_id=1187285096]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 66.0
+offset_top = 58.0
+offset_right = 66.0
+offset_bottom = 58.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="grafitimanager/Control/MarginContainer" unique_id=918262855]
+custom_minimum_size = Vector2(81.2, 64.625)
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/separation = 29
+
+[node name="TextureRect" type="TextureRect" parent="grafitimanager/Control/MarginContainer/HBoxContainer" unique_id=821771389]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+texture = ExtResource("10_4jw6c")
+
+[node name="grafitiCounter" type="Label" parent="grafitimanager/Control/MarginContainer/HBoxContainer" unique_id=721600611]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("11_4tmv2")
+theme_override_font_sizes/font_size = 40
+text = "Grafitis - 00"
+
+[connection signal="body_exited" from="TileMap/Area2D2" to="TileMap/Area2D2" method="_on_body_exited"]
+[connection signal="body_entered" from="deathzone" to="deathzone" method="_on_body_entered"]
